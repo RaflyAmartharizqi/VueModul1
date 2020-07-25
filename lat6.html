@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Loop</title>
+
+</head>
+<body>
+    
+   <div id="kelas">
+       <ol>
+           <li v-for ="(k, index) in kelas" :key="index">
+              item ke-{{index}} {{k}}
+           </li>
+       </ol>
+   </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

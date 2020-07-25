@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Event Handling</title>
+
+</head>
+<body>
+    
+   <div id="handling">
+      <button v-on:click="pesan">Tampilkan Pesan</button>
+
+      <h3>Masukkan nama guru</h3>
+      <form v-on:submit.prevent>
+          <input type="text" name="namaSiswa" id="namaSiswa" @keyup.enter="simpan" v-model="guru">
+          <button type="button" @click="simpan">Simpan</button>
+      </form>
+        <br>
+        <br>
+      <table border="1" style="border-collapse: collapse" v-if="dataGuru.length > 0">
+        <tr>
+            <thead>
+                <th style="width: 30px">#</th>
+                <th style="width: 200px">Nama Guru</th>
+            </thead>
+        </tr>
+        <tr>
+            <tbody v-for="(guru, index) in dataGuru" :key="index">
+                <td>{{index+1}}</td>
+                <td>{{guru}}</td>
+            </tbody>
+        </tr>
+      </table>
+      <h4 v-else>Tidak ada data ges</h4>
+   </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
